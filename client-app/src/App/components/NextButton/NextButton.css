@@ -1,0 +1,22 @@
+.NextButton {
+    text-align: center;
+    padding: 1rem;
+}
+
+button {
+    padding: 10px 15px;
+    margin: auto;
+
+    border-radius: 3px;
+    border-width: 0px;
+
+    background-color: #3c3cff;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #6c6cff;
+}

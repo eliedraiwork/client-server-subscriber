@@ -1,0 +1,29 @@
+.CountryDetails {
+    text-align: center;
+    margin: 0rem 2rem;
+}
+
+h2 {
+    margin-bottom: 2rem;
+}
+
+.details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    
+    overflow: hidden;
+}
+
+
+.name select {
+    font-size: 20px;
+    text-align: center;
+    border: 0.5px;
+    margin: auto;
+    width: 50%;
+    padding: 0.5rem;
+    
+    border: 1px solid black;
+    border-radius: 0.5rem;
+}
