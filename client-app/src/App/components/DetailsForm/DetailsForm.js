@@ -8,7 +8,7 @@ import BankDetails from './BankDetails/BankDetails.js';
 class DetailsForm extends React.Component {
     render() {
 
-        /*let state = 4;
+        let state = 1;
         let details = {};
 
         switch (state) {
@@ -26,11 +26,11 @@ class DetailsForm extends React.Component {
 
             default:
                 break;
-        }*/
+        }
 
         return (
             <div className="DetailsForm">
-                <BankDetails />
+                { details }
             </div>
         )
     }

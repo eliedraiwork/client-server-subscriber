@@ -1,5 +1,7 @@
-.NextButton {
-    text-align: center;
+.Buttons {
+    display: flex;
+
+    justify-content: center;
     padding: 1rem;
 }
 
@@ -7,10 +9,12 @@ button {
     padding: 10px 15px;
     margin: auto;
 
+    width: 90px;
+
     border-radius: 3px;
     border-width: 0px;
 
-    background-color: #3c3cff;
+    background-color: #0098be;
     color: white;
 
     font-size: 16px;
@@ -18,5 +22,9 @@ button {
 }
 
 button:hover {
-    background-color: #6c6cff;
+    background-color: #35b9da;
+}
+
+button:focus {
+    outline: none;
 }

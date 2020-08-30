@@ -4,7 +4,7 @@ import './App.css';
 //  Import components
 import Header from './components/Header/Header';
 import Progression from './components/Progression/Progression.js';
-import NextButton from './components/NextButton/NextButton.js';
+import Buttons from './components/Buttons/Buttons.js';
 import DetailsForm from './components/DetailsForm/DetailsForm.js';
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
       <Progression />
       <hr />
       <DetailsForm />
-      <NextButton />
+      <Buttons />
     </div>
   );
 }

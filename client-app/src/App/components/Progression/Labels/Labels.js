@@ -13,7 +13,7 @@ class Labels extends React.Component {
 
 
                     <div className="country label">
-                        Country and Currency
+                        Country and currency
                     </div>
 
                     <div className="bank label">
