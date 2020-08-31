@@ -24,19 +24,18 @@ class ClientDetails extends React.Component {
                 </div>
 
                 <div className="client-infos">
-                    <input type="text" placeholder="First name" value={this.props.firstname} readOnly/>
-                    <input type="text" placeholder="Last name" value={this.props.lastname} readOnly/>
-                    <input type="email" placeholder="Email" value={this.props.email} readOnly/>
-                    <input type="phone" placeholder="Phone number" value={this.props.phone} readOnly/>
-                    <input type="text" placeholder="Company name" value={this.props.companyName} hidden={!this.props.isBusiness} readOnly/>
+                    <input type="text" placeholder="First name" value={this.props.firstname} onChange={(event)=> this.handleChange('firstname', event.target.value)}/>
+                    <input type="text" placeholder="Last name" value={this.props.lastname} onChange={(event)=> this.handleChange('lastname', event.target.value)}/>
+                    <input type="email" placeholder="Email" value={this.props.email} onChange={(event)=> this.handleChange('email', event.target.value)}/>
+                    <input type="phone" placeholder="Phone number" value={this.props.phone} onChange={(event)=> this.handleChange('phone', event.target.value)}/>
+                    <input type="text" placeholder="Company name" value={this.props.companyName} onChange={(event)=> this.handleChange('companyName', event.target.value)} hidden={!this.props.isBusiness}/>
                 </div>
-
-
-
-
-
             </div>
         );
+    }
+
+    handleChange(field, value) {
+        this.props.updateProperty(field, value);
     }
 }
 
@@ -53,7 +52,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        updateProperty: () => dispatch(updateProperty()),
+        updateProperty: (field, value) => dispatch(updateProperty(field, value)),
         makeBusiness: () => dispatch(makeBusiness()),
         makePersonal: () => dispatch(makePersonal()) 
     }

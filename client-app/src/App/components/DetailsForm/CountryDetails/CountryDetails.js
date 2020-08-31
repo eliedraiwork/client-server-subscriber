@@ -28,6 +28,7 @@ class CountryDetails extends React.Component {
                     <Country 
                         name={country.name} 
                         currency={country.currency} 
+                        code={country.key}
                         key={country.key} 
                         flag={country.flag}/>
                 </React.Fragment>

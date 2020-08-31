@@ -1,9 +1,10 @@
 import { UPDATE_PROPERTY, MAKE_BUSINESS, MAKE_PERSONAL, NEXT_STEP, PREV_STEP } from './types';
 
-export const updateProperty = (prop) => {
+export const updateProperty = (field, value) => {
     return {
         type: UPDATE_PROPERTY,
-        prop: prop
+        field: field,
+        value: value
     };
 };
 

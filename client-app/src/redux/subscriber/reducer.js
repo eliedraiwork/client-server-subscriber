@@ -2,36 +2,29 @@ import { UPDATE_PROPERTY, MAKE_BUSINESS, MAKE_PERSONAL, NEXT_STEP, PREV_STEP } f
 
 const initialState = {
     subscriber: {
-        firstname: 'Elie',
-        lastname: 'Drai',
-        email: 'elie.drai.work@gmail.com',
-        phone: '+972584442655',
+        firstname: '',
+        lastname: '',
+        email: '',
+        phone: '',
         isBusiness: false,
         companyName: '',
-        country: 'FR',
+        country: '',
         iban: '',
         bic: ''
     },
-    step: 1
+    step: 1,
 }
 
 
 const subscriberReducer = (state = initialState, action) => {
     switch (action.type) {
         case UPDATE_PROPERTY:
-            return state;
-            /*
-            var name = action.prop.name;
-            const value = action.prop.value;
-
             var newState = {
                 ...state,
-                subscriber: state.suscriber
+                subscriber: state.subscriber
             }
-
-            newState[name] = value;
-
-            return newState;*/
+            newState.subscriber[action.field] = action.value;
+            return newState;
 
         case MAKE_BUSINESS:
             return {
@@ -52,11 +45,11 @@ const subscriberReducer = (state = initialState, action) => {
             }
 
         case NEXT_STEP:
-            const newState = {
+            return {
                 ...state,
-                step: state.step + 1
-            }
-            return newState;
+                step: state.step + 1,
+                stepValidated: false
+            };
 
         case PREV_STEP:
             return {

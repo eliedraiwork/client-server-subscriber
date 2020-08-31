@@ -1,5 +1,7 @@
 import React from 'react';
 import './Country.css';
+import { connect } from 'react-redux';
+import { updateProperty, makeBusiness, makePersonal } from '../../../../../redux/';
 
 class Country extends React.Component {
 
@@ -14,7 +16,7 @@ class Country extends React.Component {
 
         return (
 
-            <div className={this.state.selected?"Country selected":"Country"}>
+            <div className={this.props.country === this.props.code?"Country selected":"Country"} onClick={(event)=> this.handleChange('country', this.props.code)}>
                 <div className="flag">
                     <img src={this.props.flag}  alt={this.props.flag}/>
 
@@ -30,6 +32,23 @@ class Country extends React.Component {
             </div>
         );
     }
+
+    handleChange(field, value) {
+        this.props.updateProperty(field, value);
+    }
 }
 
-export default Country;
+const mapStateToProps = (state) => {
+    return {
+        country: state.subscriber.country
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+        updateProperty: (field, value) => dispatch(updateProperty(field, value))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Country);
+

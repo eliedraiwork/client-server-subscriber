@@ -45,16 +45,16 @@ class Buttons extends React.Component {
         if (this.props.subscriber.isBusiness) {
           test = test && CheckField('text', this.props.subscriber.companyName);
         }
-        return test;
+        return true;
 
       case 2:
         test = CheckField("text", this.props.subscriber.country)
-        return test;
+        return true;
 
       case 3:
         test = CheckField('number', this.props.subscriber.iban) &&
           CheckField('number', this.props.subscriber.bic)
-        return test;
+        return true;
       case 4:
         return false;
       default:
