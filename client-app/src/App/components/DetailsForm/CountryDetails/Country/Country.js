@@ -1,7 +1,7 @@
 import React from 'react';
 import './Country.css';
 import { connect } from 'react-redux';
-import { updateProperty, makeBusiness, makePersonal } from '../../../../../redux/';
+import { updateProperty } from '../../../../../redux/';
 
 class Country extends React.Component {
 

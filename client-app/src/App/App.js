@@ -11,19 +11,24 @@ import Progression from './components/Progression/Progression.js';
 import Buttons from './components/Buttons/Buttons.js';
 import DetailsForm from './components/DetailsForm/DetailsForm.js';
 
-function App() {
-  return (
-    <Provider store={store}>
-      <div className="App">
-        <Header />
-        <Progression />
-        <hr />
-        <DetailsForm />
-        <Buttons />
-      </div>
-    </Provider>
 
-  );
+
+class App extends React.Component {
+  render(){
+    return (
+      <Provider store={store}>
+        <div className="App">
+          <Header />
+          <Progression />
+          <hr />
+          <DetailsForm />
+          <Buttons />
+        </div>
+      </Provider>
+  
+    );
+  }
+  
 }
 
 export default App;

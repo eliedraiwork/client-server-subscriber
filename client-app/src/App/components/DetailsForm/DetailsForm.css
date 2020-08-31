@@ -1,5 +1,15 @@
 .DetailsForm {
     padding: 1rem;
+    min-height: 400px;
+
+    display: flex;
+    align-items: center;
+}
+
+@media screen and (max-width: 400px){
+    .DetailsForm {
+        min-height: 200px;
+    }
 }
 
 .DetailsForm > div {

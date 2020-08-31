@@ -1,3 +1,10 @@
+.BankDetails {
+    margin: auto;
+    text-align: center;
+}
+
+
+
 .bank-infos {
     display: grid;
     grid-template-columns: 1fr;

@@ -9,9 +9,9 @@ import PostSubscriber from '../../../logic/PostSubscriber';
 class Buttons extends React.Component {
   render() {
 
-    var nextButtonContent = (this.isPost()) ? "Post" : "Next";
+    var nextButtonContent = (this.isPost()) ? "Submit" : "Next";
     var nextButtonPostClass = (this.isPost()) ? "post-btn" : "";
-    var nextButtonOnClick = (this.isPost()) ? this.postSubscriber : this.props.nextStep;
+
     return (
       <div className="Buttons">
         <button id="btn-previous"
@@ -22,11 +22,18 @@ class Buttons extends React.Component {
         <button id="btn-next"
           disabled={(!this.checkNext()) ? true : false}
           className={nextButtonPostClass}
-          onClick={nextButtonOnClick}>
+          onClick={this.nextButtonOnClick}>
           {nextButtonContent}
         </button>
       </div>
     );
+  }
+
+  nextButtonOnClick = () => {
+    this.props.nextStep();
+    if(this.isPost()){
+      this.postSubscriber();
+    }
   }
 
   isPost = () => {

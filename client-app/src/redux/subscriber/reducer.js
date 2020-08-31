@@ -13,6 +13,7 @@ const initialState = {
         bic: ''
     },
     step: 1,
+    avoidNext: true,
 }
 
 

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import ClientDetails from './ClientDetails/ClientDetails.js';
 import CountryDetails from './CountryDetails/CountryDetails.js';
 import BankDetails from './BankDetails/BankDetails.js';
+import Success from './Success/Success';
 
 class DetailsForm extends React.Component {
     render() {
@@ -24,6 +25,10 @@ class DetailsForm extends React.Component {
 
             case 3:
                 details = <BankDetails />;
+                break;
+
+            case 4:
+                details = <Success />
                 break;
 
             default:
