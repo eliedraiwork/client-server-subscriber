@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import './Buttons.css';
-import CheckField from '../../../logic/CheckFields'
+//import CheckField from '../../../logic/CheckFields'
 
 import { nextStep, previousStep } from '../../../redux/';
 import PostSubscriber from '../../../logic/PostSubscriber';
@@ -41,26 +41,26 @@ class Buttons extends React.Component {
   }
 
   checkNext() {
-    var test = true;
+    //var test = true;
     switch (this.props.step) {
       case 1:
-        test = CheckField('text', this.props.subscriber.firstname) &&
+        /*test = CheckField('text', this.props.subscriber.firstname) &&
           CheckField('text', this.props.subscriber.lastname) &&
           CheckField('email', this.props.subscriber.email) &&
-          CheckField('phone', this.props.subscriber.phone);
+          CheckField('phone', this.props.subscriber.phone);*/
 
         if (this.props.subscriber.isBusiness) {
-          test = test && CheckField('text', this.props.subscriber.companyName);
+          //test = test && CheckField('text', this.props.subscriber.companyName);
         }
         return true;
 
       case 2:
-        test = CheckField("text", this.props.subscriber.country)
+        //test = CheckField("text", this.props.subscriber.country)
         return true;
 
       case 3:
-        test = CheckField('number', this.props.subscriber.iban) &&
-          CheckField('number', this.props.subscriber.bic)
+        /*test = CheckField('number', this.props.subscriber.iban) &&
+          CheckField('number', this.props.subscriber.bic)*/
         return true;
       case 4:
         return false;

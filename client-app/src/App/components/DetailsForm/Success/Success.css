@@ -7,6 +7,9 @@
 .Success img {
     height: 300px;
     margin: auto;
+    margin-bottom: 2rem;
+
+    color: #2eb32e;
 }
 
 @media screen and (max-width: 400px){

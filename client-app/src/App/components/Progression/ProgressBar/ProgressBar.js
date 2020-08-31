@@ -11,12 +11,14 @@ class ProgressBar extends React.Component {
                 break;
             case 2: progressionClass = "progress-bar-step-2";
                 break;
-            default: progressionClass = "progress-bar-step-3";
+            case 3: progressionClass = "progress-bar-step-3";
+                break;
+            default: progressionClass = "progress-bar-step-4";
                 break;
         }
         return (
 
-            
+
 
             <div className="ProgressBar">
                 <div id="progressBar">
