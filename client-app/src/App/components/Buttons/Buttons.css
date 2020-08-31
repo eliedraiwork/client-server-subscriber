@@ -25,6 +25,20 @@ button:hover {
     background-color: #35b9da;
 }
 
+
+.post-btn {
+    background-color: #2eb32e;
+}
+
+.post-btn:hover {
+    background-color: #52b952;
+}
+
+button:disabled {
+    background-color: #979797 !important;
+}
+
+
 button:focus {
     outline: none;
 }

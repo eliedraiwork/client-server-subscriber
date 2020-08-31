@@ -8,46 +8,63 @@
 const express = require('express');
 const app = express();
 
+//  use cors
+const cors = require('cors');
+app.use(cors());
+
 //  use body parser
 const bodyParser = require('body-parser');
-app.use( bodyParser.json() );       // to support JSON-encoded bodies
+app.use(bodyParser.json());       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
-  extended: true
-})); 
+    extended: true
+}));
 
 
 //  GET route: /country-values
-app.get('/country-values', (req, res)=> {
+app.get('/country-values', (req, res) => {
 
-    const values= {
-        'FR': {
+    const flag_urls = "https://www.countryflags.io/";
+    const flag_end = "/flat/64.png"
+
+    const values = [
+        {
+            key: 'FR',
             name: "France",
             code: '+33',
             currency: 'EUR',
-            flag: ''
+            flag: flag_urls + "fr" + flag_end
         },
-        'UK': {
+        {
+            key: "GB",
             name: "United Kingdom",
             code: '+44',
             currency: 'GBP',
-            flag: ''
+            flag: flag_urls + "gb"+ flag_end
         },
-        'USA': {
+        {
+            key: 'US',
             name: "USA",
             code: '+1',
             currency: 'USD',
-            flag: ''
+            flag: flag_urls + "us" + flag_end
+        },
+        {
+            key: "IL",
+            name: "Israel",
+            code: '+972',
+            currency: 'NIS',
+            flag: flag_urls + "il" + flag_end
         }
-    };
-    
+    ];
+
     res.send(values);
 });
 
 //  POST route: /subscribe
-app.post('/subscribe', (req, res)=> {
-    var data = req.query;
+app.post('/subscribe', (req, res) => {
+    var data = req.body;
     console.log(data);
-    res.send({status: 200, msg: "OK"});
+    res.send({ status: 200, msg: "OK" });
 })
 
 

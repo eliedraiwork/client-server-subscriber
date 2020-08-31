@@ -1,6 +1,8 @@
 import React from 'react';
 import './DetailsForm.css';
 
+import { connect } from 'react-redux';
+
 import ClientDetails from './ClientDetails/ClientDetails.js';
 import CountryDetails from './CountryDetails/CountryDetails.js';
 import BankDetails from './BankDetails/BankDetails.js';
@@ -8,7 +10,7 @@ import BankDetails from './BankDetails/BankDetails.js';
 class DetailsForm extends React.Component {
     render() {
 
-        let state = 1;
+        let state = this.props.step;
         let details = {};
 
         switch (state) {
@@ -25,16 +27,30 @@ class DetailsForm extends React.Component {
                 break;
 
             default:
+                details = <div></div>
                 break;
         }
 
         return (
             <div className="DetailsForm">
-                { details }
+                {details}
             </div>
         )
     }
 
 }
 
-export default DetailsForm;
+const mapStateToProps = (state) => {
+    return {
+        step: state.step
+    }
+}
+
+const mapDispatchToProps = dispatch => {
+    return {
+
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(DetailsForm);
+

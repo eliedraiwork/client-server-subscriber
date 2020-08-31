@@ -3,6 +3,7 @@
 
 # Ignore testing environment
 client-manual-app
+test-env/*
 
 # production
 **/build

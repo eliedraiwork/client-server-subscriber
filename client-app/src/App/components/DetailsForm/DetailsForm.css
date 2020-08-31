@@ -1,3 +1,9 @@
 .DetailsForm {
     padding: 1rem;
 }
+
+.DetailsForm > div {
+    margin: auto;
+    height: 100%;
+    width: 100%;
+}

@@ -1,0 +1,41 @@
+.Country {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: space-between;
+    align-items: center;
+    height: 2rem;
+    width: 400px;
+
+
+    margin-bottom: 0.5rem;
+
+    border: 0.1px solid #00afdb;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+}
+
+@media screen and (max-width: 800px){
+    .Country {
+        width: 90%;
+        cursor: pointer;
+    }
+
+    .Country > .name {
+        width: 0%;
+        overflow: hidden;
+    }
+}
+
+.Country img {
+    height: 1.5rem;
+}
+
+.selected {
+    background-color: #35b9da;
+}
+
+.Country > .name {
+    display: flex;
+    justify-content: flex-start;
+}
