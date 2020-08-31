@@ -4,6 +4,8 @@ import './ClientDetails.css';
 import { updateProperty, makeBusiness, makePersonal } from '../../../../redux/';
 import CheckField from '../../../../logic/CheckFields';
 
+import Input from '../Input/Input';
+
 class ClientDetails extends React.Component {
     render() {
         return (
@@ -25,29 +27,11 @@ class ClientDetails extends React.Component {
                 </div>
 
                 <div className="client-infos">
-                    <input  type="text" placeholder="First name" 
-                        value={this.props.firstname} 
-                        onChange={(event)=> this.handleChange('firstname', event.target, 'text')} 
-                        onBlur={(event)=>this.setClassErrorInput(event.target, 'text', this.props.firstname)}/>
-
-                    <input  type="text" placeholder="Last name" 
-                        value={this.props.lastname} 
-                        onChange={(event)=> this.handleChange('lastname', event.target, 'text')} 
-                        onBlur={(event)=>this.setClassErrorInput(event.target, 'text', this.props.lastname)}/>
-
-                    <input  type="email" placeholder="Email" 
-                        value={this.props.email} 
-                        onChange={(event)=> this.handleChange('email', event.target, 'email')} 
-                        onBlur={(event)=>this.setClassErrorInput(event.target, 'email', this.props.email)}/>
-                    <input  type="phone" placeholder="Phone number" 
-                        value={this.props.phone} 
-                        onChange={(event)=> this.handleChange('phone', event.target, 'phone')} 
-                        onBlur={(event)=>this.setClassErrorInput(event.target, 'phone', this.props.phone)}/>
-                    <input  type="text" placeholder="Company name" 
-                        value={this.props.companyName} 
-                        onChange={(event)=> this.handleChange('companyName', event.target, 'text')} 
-                        hidden={!this.props.isBusiness} 
-                        onBlur={(event)=>this.setClassErrorInput(event.target, 'text', this.props.companyName)}/>
+                    <Input placeholder="First name" type="text" value={this.props.firstname} propertyName="firstname"/>
+                    <Input placeholder="Last name" type="text" value={this.props.lastname} propertyName="lastname"/>
+                    <Input placeholder="Email" type="email" value={this.props.email} propertyName="email"/>
+                    <Input placeholder="Phone number" type="phone" value={this.props.phone} propertyName="phone"/>
+                    <Input placeholder="Company name" type="text" value={this.props.companyName} propertyName="companyName" hidden={!this.props.isBusiness}/>
                 </div>
             </div>
         );

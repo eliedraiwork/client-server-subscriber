@@ -3,8 +3,11 @@ import './ProgressBar.css';
 import { connect } from 'react-redux';
 
 class ProgressBar extends React.Component {
-    render() {
 
+
+
+    render() {
+        
         var progressionClass = "";
         switch (this.props.step) {
             case 1: progressionClass = "progress-bar-step-1";

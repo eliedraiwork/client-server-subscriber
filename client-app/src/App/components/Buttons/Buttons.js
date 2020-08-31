@@ -16,13 +16,15 @@ class Buttons extends React.Component {
       <div className="Buttons">
         <button id="btn-previous"
           disabled={!this.checkPrevious() ? true : false}
-          onClick={this.props.previousStep}>
+          onClick={this.props.previousStep}
+          hidden={this.props.step === 4}>
           Previous
           </button>
         <button id="btn-next"
           disabled={(!this.checkNext()) ? true : false}
           className={nextButtonPostClass}
-          onClick={this.nextButtonOnClick}>
+          onClick={this.nextButtonOnClick}
+          hidden={this.props.step === 4}>
           {nextButtonContent}
         </button>
       </div>

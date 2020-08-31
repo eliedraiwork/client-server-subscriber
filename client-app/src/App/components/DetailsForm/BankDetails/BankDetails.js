@@ -4,6 +4,8 @@ import './BankDetails.css';
 import { connect } from 'react-redux';
 import { updateProperty } from '../../../../redux/';
 
+import Input from '../Input/Input';
+
 class BankDetails extends React.Component {
     render() {
         return (
@@ -11,8 +13,8 @@ class BankDetails extends React.Component {
             <div className="BankDetails">
                 <h2>Enter your bank details</h2>
                 <div className="bank-infos">
-                    <input type="text" placeholder="IBAN" value={this.props.iban} onChange={(event)=> this.handleChange('iban', event.target.value)}/>
-                    <input type="text" placeholder="BIC CODE" value={this.props.bic} onChange={(event)=> this.handleChange('bic', event.target.value)}/>
+                    <Input placeholder="IBAN" type="number" value={this.props.iban} propertyName="iban"/>
+                    <Input placeholder="BIC" type="number" value={this.props.bic} propertyName="bic"/>
                 </div>
             </div>
         );

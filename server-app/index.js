@@ -31,28 +31,35 @@ app.get('/country-values', (req, res) => {
             key: 'FR',
             name: "France",
             code: '+33',
-            currency: 'EUR',
+            currency: '€ (EUR)',
             flag: flag_urls + "fr" + flag_end
+        },
+        {
+            key: 'CN',
+            name: "China",
+            code: '+265',
+            currency: '¥ (CNY)',
+            flag: flag_urls + "cn" + flag_end
         },
         {
             key: "GB",
             name: "United Kingdom",
             code: '+44',
-            currency: 'GBP',
+            currency: '£ (GBP)',
             flag: flag_urls + "gb"+ flag_end
         },
         {
             key: 'US',
             name: "USA",
             code: '+1',
-            currency: 'USD',
+            currency: '$ (USD)',
             flag: flag_urls + "us" + flag_end
         },
         {
             key: "IL",
             name: "Israel",
             code: '+972',
-            currency: 'NIS',
+            currency: '₪ (NIS)',
             flag: flag_urls + "il" + flag_end
         }
     ];

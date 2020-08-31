@@ -8,9 +8,6 @@ This repository intends to store 2 related projects
 
 The Client app consists on a simple subscribe-form which connect to the Server app. The Server app can manage several routes.
 
-## Client app
-A subscriber form implemented in React.js.
-
 ## Server app
 A server implemented with node.js and Express.js.
 
@@ -19,3 +16,10 @@ The server run on port 4000.
 The server's routes are the following:
 1. GET at "/country-values" to fetch some defined country values
 2. POST at "/subscribe" to subscribe a client
+
+## Client app
+A subscriber form implemented in React.js.
+
+The global state is managed by redux library.
+
+No CSS framework such as bootstrap has been used.
