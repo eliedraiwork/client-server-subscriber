@@ -37,7 +37,7 @@ app.get('/country-values', (req, res) => {
         {
             key: 'CN',
             name: "China",
-            code: '+265',
+            code: '+86',
             currency: '¥ (CNY)',
             flag: flag_urls + "cn" + flag_end
         },
@@ -71,7 +71,7 @@ app.get('/country-values', (req, res) => {
 app.post('/subscribe', (req, res) => {
     var data = req.body;
     console.log(data);
-    res.send({ status: 200, msg: "OK" });
+    res.send({ status: 200, msg: "OK", subscriber: data });
 })
 
 
