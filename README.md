@@ -17,9 +17,21 @@ The server's routes are the following:
 1. GET at "/country-values" to fetch some defined country values
 2. POST at "/subscribe" to subscribe a client
 
+To start the project run in terminal
+```
+npm install
+node start
+```
+
 ## Client app
 A subscriber form implemented in React.js.
 
 The global state is managed by redux library.
 
 No CSS framework such as bootstrap has been used.
+
+To start the project run in terminal
+```
+npm install
+npm start
+```
