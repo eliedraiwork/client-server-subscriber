@@ -27,11 +27,11 @@ class ClientDetails extends React.Component {
                 </div>
 
                 <div className="client-infos">
-                    <Input placeholder="First name" type="text" value={this.props.firstname} propertyName="firstname"/>
-                    <Input placeholder="Last name" type="text" value={this.props.lastname} propertyName="lastname"/>
-                    <Input placeholder="Email" type="email" value={this.props.email} propertyName="email"/>
-                    <Input placeholder="Phone number" type="phone" value={this.props.phone} propertyName="phone"/>
-                    <Input placeholder="Company name" type="text" value={this.props.companyName} propertyName="companyName" hidden={!this.props.isBusiness}/>
+                    <Input placeholder="First name" type="text" value={this.props.firstname} propertyName="firstname" isError={!this.props.validate.firstname}/>
+                    <Input placeholder="Last name" type="text" value={this.props.lastname} propertyName="lastname" isError={!this.props.validate.lastname}/>
+                    <Input placeholder="Email" type="email" value={this.props.email} propertyName="email" isError={!this.props.validate.email}/>
+                    <Input placeholder="Phone number" type="phone" value={this.props.phone} propertyName="phone" isError={!this.props.validate.phone}/>
+                    <Input placeholder="Company name" type="text" value={this.props.companyName} propertyName="companyName" hidden={!this.props.isBusiness} isError={!this.props.validate.companyName}/>
                 </div>
             </div>
         );
@@ -64,7 +64,7 @@ const mapStateToProps = (state) => {
         phone: state.subscriber.phone,
         isBusiness: state.subscriber.isBusiness,
         companyName: state.subscriber.companyName,
-        avoidNext: state.avoidNext
+        validate: state.validate
     }
 }
 

@@ -1,4 +1,4 @@
-import { UPDATE_PROPERTY, MAKE_BUSINESS, MAKE_PERSONAL, NEXT_STEP, PREV_STEP } from './types';
+import { UPDATE_PROPERTY, VALIDATE_FIELD, MAKE_BUSINESS, MAKE_PERSONAL, NEXT_STEP, PREV_STEP } from './types';
 
 export const updateProperty = (field, value) => {
     return {
@@ -7,6 +7,14 @@ export const updateProperty = (field, value) => {
         value: value
     };
 };
+
+export const validateField = (field, value) => {
+    return {
+        type: VALIDATE_FIELD,
+        field: field,
+        value: value
+    }
+}
 
 export const makeBusiness = () => {
     return {

@@ -1,4 +1,4 @@
-import { UPDATE_PROPERTY, MAKE_BUSINESS, MAKE_PERSONAL, NEXT_STEP, PREV_STEP } from './types';
+import { UPDATE_PROPERTY, MAKE_BUSINESS, MAKE_PERSONAL, NEXT_STEP, PREV_STEP, VALIDATE_FIELD } from './types';
 
 const initialState = {
     subscriber: {
@@ -13,18 +13,37 @@ const initialState = {
         bic: ''
     },
     step: 1,
-    avoidNext: true,
+    validate: {
+        firstname: true,
+        lastname: true,
+        email: true,
+        phone: true,
+        isBusiness: true,
+        companyName: true,
+        country: true,
+        iban: true,
+        bic: true
+    }
 }
 
 
 const subscriberReducer = (state = initialState, action) => {
+    var newState = {}
     switch (action.type) {
         case UPDATE_PROPERTY:
-            var newState = {
+            newState = {
                 ...state,
                 subscriber: state.subscriber
             }
             newState.subscriber[action.field] = action.value;
+            return newState;
+
+        case VALIDATE_FIELD:
+            newState = {
+                ...state,
+                validate: state.validate
+            }
+            newState.validate[action.field] = action.value;
             return newState;
 
         case MAKE_BUSINESS:

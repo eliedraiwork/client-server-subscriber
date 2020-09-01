@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
-import { updateProperty } from '../../../../redux/';
+import { updateProperty, validateField } from '../../../../redux/';
 import CheckField from '../../../../logic/CheckFields';
 
 class Input extends Component {
@@ -12,46 +12,41 @@ class Input extends Component {
             type: props.type,
             value: props.value,
             propertyName: props.propertyName,
-            hidden: props.hidden
+            hidden: props.hidden,
+            isError: props.isError
         }
     }
 
     render() {
         return (
-                <input type={this.props.type} placeholder={this.props.placeholder} hidden={this.props.hidden}
-                    value={this.props.value}
-                    onChange={(event) => this.handleChange(this.props.propertyName, event.target, this.props.type)}/>
+            <input type={this.props.type} placeholder={this.props.placeholder} hidden={this.props.hidden}
+                value={this.props.value}
+                onChange={(event) => this.handleChange(this.props.propertyName, event.target, this.props.type)}
+                className={ this.props.isError? "error-input" : ""} />
         )
     }
 
     handleChange(field, element, fieldType) {
         const value = element.value;
         this.props.updateProperty(field, value);
-        this.setClassErrorInput(element, fieldType, value);
 
-    }
-
-    setClassErrorInput(element, fieldType, value) {
-        if(!CheckField(fieldType, value)){
-            element.classList.add('error-input');
-            element.classList.remove('right-input');
-        }
-        else{
-            element.classList.remove('error-input');
-            element.classList.add('right-input');
+        if (CheckField(fieldType, value)) {
+            this.props.validateField(this.props.propertyName, true);
         }
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-        subscriber: state.subscriber
+        subscriber: state.subscriber,
+        validate: state.validate
     }
 }
 
 const mapDispatchToProps = dispatch => {
     return {
         updateProperty: (field, value) => dispatch(updateProperty(field, value)),
+        validateField: (field, value) => dispatch(validateField(field, value))
     }
 }
 

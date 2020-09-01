@@ -13,8 +13,8 @@ class BankDetails extends React.Component {
             <div className="BankDetails">
                 <h2>Enter your bank details</h2>
                 <div className="bank-infos">
-                    <Input placeholder="IBAN" type="number" value={this.props.iban} propertyName="iban"/>
-                    <Input placeholder="BIC" type="number" value={this.props.bic} propertyName="bic"/>
+                    <Input placeholder="IBAN" type="number" value={this.props.iban} propertyName="iban" isError={!this.props.validate.iban}/>
+                    <Input placeholder="BIC" type="number" value={this.props.bic} propertyName="bic" isError={!this.props.validate.bic}/>
                 </div>
             </div>
         );
@@ -28,7 +28,8 @@ class BankDetails extends React.Component {
 const mapStateToProps = (state) => {
     return {
         iban: state.subscriber.iban,
-        bic: state.subscriber.bic
+        bic: state.subscriber.bic,
+        validate: state.validate
     }
 }
 
